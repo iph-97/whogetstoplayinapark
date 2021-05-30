@@ -1,0 +1,355 @@
+<html>
+    <head>
+        <style>
+            .chart-container {
+                max-width: 1050px;
+                margin: 0 auto;
+                margin-bottom: 10px;
+                /* auto centers the div */
+            }
+
+            svg {
+                overflow: visible;
+                margin-top: 10px;
+                margin-left: 0;
+                position: absolute;
+                left: 10px;
+                top: 150px;
+                z-index: 10;
+            }
+
+            h1 {
+                margin: 0 auto;
+                font-family: Didot;
+                font-size: 70px;
+                text-align: left;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 1000px;
+                position: absolute;
+                left: 50px;
+            }
+
+            .text {
+                position: absolute;
+                left: 730px;
+                top: 170px;
+                z-index: 12;
+            }
+
+            .note {
+                margin: 0 auto;
+                font-family: Georgia;
+                font-size: 16px;
+                text-align: left;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 450px;
+            }
+
+            #one {
+                position: relative;
+                left: -150px;
+            }
+
+            #two {
+                position: relative;
+                left: -120px;
+            }
+
+            #three {
+                position: relative;
+                left: -100px;
+            }
+
+            ul {
+                font-family: Georgia;
+                list-style-type: disc;
+                text-align: left;
+                margin: 0 auto;
+                width: 450px;
+                position: relative;
+                left: -35px;
+            }
+
+            #four {
+                position: relative;
+                left: -5px;
+            }
+
+            .source {
+                margin-top: 10px;
+                font-family: Georgia;
+                font-size: 12px;
+                color: gray;
+                text-align: left;
+                position: absolute;
+                top: 1140px;
+                left: 20px;
+            }
+
+            .pop-up {
+                position: absolute; 
+                border: 1px solid black;
+                border-radius: 1px;
+                line-height: 1.2;
+                width: 200px;
+                pointer-events: none;
+                background-color: white;
+                padding: 10px;
+                opacity: 0;
+                font-family: Georgia;
+                font-size: 16px;
+                z-index: 20;
+            }
+
+            .drop-down {
+                margin-left: 400px;
+                text-align: center;
+                margin-top: 20px;
+                position: absolute;
+                top: 120px;
+                left: -320px;
+                font-family: Georgia;
+            }
+
+            img {
+                position: absolute;
+                top: 420px;
+                left: 80px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                height: 400px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class = "chart-container">
+            <h1 class = "headline">
+                Who gets to play in a park?
+            </h1>
+
+            <div class = "text">
+
+            <p class = "note" id = "one">
+                Parks are really important. They provide shade, gathering space, and relief from the heat. Parks are shown to promote health across <a href = "https://www.nrpa.org/parks-recreation-magazine/2017/april/the-health-benefits-of-small-parks-and-green-spaces/">many dimensions</a> - physical, mental, and social. However, the distribution of parks is inequitable across many cities in the United States, and Chicago is no exception.
+            </p>
+
+            <p class = "note" id = "two">
+                The Chicago Park District is the oldest centralized park system in the country, carrying with it a complicated history of racial discrimination. In 1982, the <a href = "https://www.nytimes.com/1982/12/01/us/us-sues-chicago-park-district-charging-racial-bias-in-programs.html">park district</a> was sued by the federal government for failing to comply with 1974 legislation on the basis on inequitable provision of programs and facilities to Black and Latino communities.
+            </p>
+
+            <p class = "note" id = "three">
+                Sadly, these inequities persist. A 2018 <a href = "https://www.fotp.org/uploads/1/3/3/6/133647985/state-of-the-parks-2018.pdf">State of the Parks</a> report from Friends of the Park highlighted the persistance of disinvestment in Chicago parklands. Their findings include:
+                <ul>
+                    <li>Parks on the South Side have smaller budgets than North Side parks of similar size.</li>
+                    <li>Half of the budget allocated for subsidizing youth participation in park programming goes unused.</li>
+                    <li>Crime, both reported and perceived, limits the ability of parks to promote community health.</li>
+                    <li>North Side parks have more robust programming than South Side parks.</li>
+                    <li>Capital requests in black communities are improved at half the rate as those in white communitites</li>
+                    <li>Latino communities only have 197 acres of parkland, the least of any demographic group.</li>
+                </ul>
+            </p>
+
+            <p class = "note" id = "four">
+                To explore the landscape of Chicago parks, select a neighborhood from the drop down menu.
+            </p>
+
+        </div>
+
+            <select class = "drop-down">
+                <option> ROGERS PARK </option>
+                <option> WEST RIDGE </option>
+                <option> UPTOWN </option>
+                <option> LINCOLN SQUARE </option>
+                <option> NORTH CENTER </option>
+                <option> LAKE VIEW </option>
+                <option> LINCOLN PARK </option>
+                <option> NEAR NORTH SIDE </option>
+                <option> EDISON PARK </option>
+                <option> NORWOOD PARK </option>
+                <option> JEFFERSON PARK </option>
+                <option> FOREST GLEN </option>
+                <option> NORTH PARK </option>
+                <option> ALBANY PARK </option>
+                <option> PORTAGE PARK </option>
+                <option> IRVING PARK </option>
+                <option> DUNNING </option>
+                <option> MONTCLARE </option>
+                <option> BELMONT CRAGIN </option>
+                <option> HERMOSA </option>
+                <option> AVONDALE </option>
+                <option> LOGAN SQUARE </option>
+                <option> HUMBOLDT PARK </option>
+                <option> WEST TOWN </option>
+                <option> AUSTIN </option>
+                <option> WEST GARFIELD PARK </option>
+                <option> EAST GARFIELD PARK </option>
+                <option> NEAR WEST SIDE </option>
+                <option> NORTH LAWNDALE </option>
+                <option> SOUTH LAWNDALE </option>
+                <option> LOWER WEST SIDE </option>
+                <option> LOOP </option>
+                <option> NEAR SOUTH SIDE </option>
+                <option> ARMOUR SQUARE </option>
+                <option> DOUGLAS </option>
+                <option> OAKLAND </option>
+                <option> FULLER PARK </option>
+                <option> GRAND BOULEVARD </option>
+                <option> KENWOOD </option>
+                <option> WASHINGTON PARK </option>
+                <option> HYDE PARK </option>
+                <option> WOODLAWN </option>
+                <option> SOUTH SHORE </option>
+                <option> CHATHAM </option>
+                <option> AVALON PARK </option>
+                <option> SOUTH CHICAGO </option>
+                <option> BURNSIDE </option>
+                <option> CALUMET HEIGHTS </option>
+                <option> ROSELAND </option>
+                <option> PULLMAN </option>
+                <option> SOUTH DEERING </option>
+                <option> EAST SIDE </option>
+                <option> WEST PULLMAN </option>
+                <option> RIVERDALE </option>
+                <option> HEGEWISCH </option>
+                <option> GARFIELD RIDGE </option>
+                <option> ARCHER HEIGHTS </option>
+                <option> BRIGHTON PARK </option>
+                <option> MCKINLEY PARK </option>
+                <option> BRIDGEPORT </option>
+                <option> NEW CITY </option>
+                <option> WEST ELSDON </option>
+                <option> GAGE PARK </option>
+                <option> CLEARING </option>
+                <option> WEST LAWN </option>
+                <option> CHICAGO LAWN </option>
+                <option> WEST ENGLEWOOD </option>
+                <option> ENGLEWOOD </option>
+                <option> GREATER GRAND CROSSING </option>
+                <option> ASHBURN </option>
+                <option> AUBURN GRESHAM </option>
+                <option> BEVERLY HILLS </option>
+                <option> WASHINGTON HEIGHTS </option>
+                <option> MOUNT GREENWOOD </option>
+                <option> MORGAN PARK </option>
+                <option> O'HARE </option>
+                <option> EDGEWATER </option>
+
+            </select>
+
+            <svg width = "1000px" height = "1000px"></svg>
+
+            <img src = "key.svg"></img>
+
+            <p class = "source">
+                Source: National Neighborhood Data Archive (NaNDA), 2018
+            </p>
+
+            <div class = "pop-up"></div>
+        </div>
+
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="https://unpkg.com/topojson@3"></script>
+
+
+        <script>
+            console.log({topojson})
+
+            Promise.all([ //waits for all the data to load, then when loaded will return it all in one array called res
+                d3.json('geo_export3.json'),
+            ])
+                .then(ready)
+                .catch((err) => {
+                    console.log(err);
+                });
+
+            function ready(res) {
+                console.log(res[0])
+                let raw = res[0]
+                let tract = topojson.feature(raw, raw.objects.tracts);
+                // let ca = topojson.feature(raw, raw.objects.comm_area);
+                let width = 800;
+                let height = 1000;
+
+            console.log(tract)
+
+            let svg = d3.select("body").select("svg")
+
+            let button = d3.select(".drop-down").on("change", update)
+
+            let myProjection = d3.geoMercator()
+                .fitSize([width, height], tract)
+
+            let path = d3.geoPath()
+                .projection(myProjection)
+
+            let popup = d3.select(".pop-up");
+
+            let tracts = svg.append("g")
+                .selectAll(".tracts")
+                .data(tract.features)
+                .enter().append("path")
+                .attr("d", path)
+                .style("fill-opacity", 1)
+                .style("stroke", "gray")
+                .style("stroke-width", .2)
+                .style("fill", d => d.properties.fill)
+                .attr("class", d => "g" + d.properties.geoid10)
+
+            function update() {
+                console.log("update")
+
+                //d3.selectAll("path").remove();
+
+                let source = button.node().options[button.node().selectedIndex].value
+
+                console.log(source)
+                
+                tracts
+                    .style("fill-opacity", .2)
+                    .style("stroke", "gray")
+                    .style("stroke-width", .2)
+
+                let geo = tracts.filter(d => d.properties.community == source)
+
+                console.log(geo)
+
+                geo
+                    .style("fill-opacity", 1)
+                    .style("stroke", "gray")
+                    .style("stroke-width", 2)
+
+                geo.on("mouseover", (event, d) => {
+
+                    let park_area = d3.format(".1f")(d.properties.park_per)
+
+                    let income = d3.format("($,.0f")(d.properties.ami_2019_infl_adj)
+
+                    let race = d3.format(".0%")(d.properties.perc_white)
+
+                    let lang = "This tract has " + park_area + " square meters of open park area per person. In 2019, the median income was " + income + " and it was " + race + " white."
+
+                    popup
+                        .style("opacity", 1)
+                        .style("left", (event.x - 250) + "px")
+                        .style("top", (event.y - 150) + "px")
+                        .html(lang)
+
+                    console.log({event})
+                })
+
+                geo.on("mouseout", (event, d) => {
+                
+                    popup
+                    .style("opacity", 0)
+                })
+
+            }
+        
+
+            }
+        </script>
+    </body>
+</html>
